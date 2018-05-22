@@ -20,16 +20,29 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-http-xml"        % akkaHttpVersion,
   "com.typesafe.akka" %% "akka-stream"          % akkaVersion,
 
+  "com.typesafe.akka" %% "akka-stream-testkit" % akkaVersion % Test,
 
-  "com.typesafe.play" %% "play-json" % "2.6.7",
+
+"com.typesafe.akka" %% "akka-cluster" % akkaVersion,
+  "com.typesafe.akka" %% "akka-cluster-tools" % akkaVersion,
+  "com.typesafe.akka" %% "akka-cluster-sharding" % akkaVersion,
+
+  "com.typesafe.akka" %% "akka-remote" % akkaVersion,
+
+  "com.typesafe.akka" %% "akka-persistence" % akkaVersion,
+  "com.typesafe.akka" %% "akka-persistence-query" %  akkaVersion,
+
+  "com.typesafe.akka" %% "akka-contrib" % akkaVersion,
+
+
+  "com.typesafe" % "config" % "1.3.3",
+
+
+
+"com.typesafe.play" %% "play-json" % "2.6.7",
   // https://mvnrepository.com/artifact/com.typesafe.play/play-json-joda
   "com.typesafe.play" %% "play-json-joda" % "2.6.9",
 
-   "com.typesafe.akka" %% "akka-persistence" % akkaVersion,
-  // https://mvnrepository.com/artifact/com.typesafe.akka/akka-persistence-query-experimental
-   "com.typesafe.akka" %% "akka-persistence-query" %  akkaVersion,
-
-"com.typesafe.akka" %% "akka-remote" % akkaVersion,
 
 
   "com.typesafe.slick" %% "slick"  % slickVersion,
