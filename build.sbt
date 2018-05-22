@@ -26,9 +26,18 @@ libraryDependencies ++= Seq(
   "com.typesafe.play" %% "play-json-joda" % "2.6.9",
 
    "com.typesafe.akka" %% "akka-persistence" % akkaVersion,
+  // https://mvnrepository.com/artifact/com.typesafe.akka/akka-persistence-query-experimental
+   "com.typesafe.akka" %% "akka-persistence-query" %  akkaVersion,
+
+"com.typesafe.akka" %% "akka-remote" % akkaVersion,
 
 
   "com.typesafe.slick" %% "slick"  % slickVersion,
   "com.typesafe.slick" %% "slick-hikaricp" % slickVersion,
-  "mysql" % "mysql-connector-java" % "6.0.6"
+  "mysql" % "mysql-connector-java" % "6.0.6",
+
+  // https://mvnrepository.com/artifact/org.iq80.leveldb/leveldb
+  "org.iq80.leveldb" % "leveldb" % "0.10"
+
+
 )

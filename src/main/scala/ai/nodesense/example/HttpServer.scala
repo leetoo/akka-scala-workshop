@@ -241,25 +241,7 @@ object HttpServer  extends App  with Routes {
         complete(StatusCodes.Accepted, "profile take it ")
       }
   }
-
-  // low level model
-
-  val requestHandler: HttpRequest => HttpResponse = {
-    case HttpRequest(GET, Uri.Path("/"), _, _, _) =>
-      HttpResponse(entity = HttpEntity(
-        ContentTypes.`text/html(UTF-8)`,
-        "<html><body>Hello world!</body></html>"))
-
-    case HttpRequest(GET, Uri.Path("/ping"), _, _, _) =>
-      HttpResponse(entity = "PONG!")
-
-    case HttpRequest(GET, Uri.Path("/crash"), _, _, _) =>
-      sys.error("BOOM!")
-
-    case r: HttpRequest =>
-      r.discardEntityBytes() // important to drain incoming HTTP Entity stream
-      HttpResponse(404, entity = "Unknown resource!")
-  }
+ 
 
 
   val fileRoutes = path("logs" / Segment) { name =>
@@ -273,10 +255,6 @@ object HttpServer  extends App  with Routes {
     }
 
   Http().bindAndHandle(route ~ productRoutes ~ profileRoute ~ fileRoutes ~ dirRoutes, "localhost", 8080)
-
-
-  // Low Level API Example
-  //Http().bindAndHandleSync(requestHandler, "localhost", 8080)
 
   println(s"Server online at http://localhost:8080/")
 
