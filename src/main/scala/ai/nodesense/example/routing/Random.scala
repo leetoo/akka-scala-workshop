@@ -11,13 +11,13 @@ object Random extends App {
 
   val routerPool = system.actorOf(FromConfig.props(Props[Worker]), "random-router-pool")
 
-  routerPool ! Work()
+  routerPool ! Work("Work 1")
 
-  routerPool ! Work()
+  routerPool ! Work("Work 2")
 
-  routerPool ! Work()
+  routerPool ! Work("Work 3")
 
-  routerPool ! Work()
+  routerPool ! Work("Work 4")
 
   Thread.sleep(100)
 
@@ -29,13 +29,13 @@ object Random extends App {
 
   val routerGroup = system.actorOf(RandomGroup(paths).props(), "random-router-group")
 
-  routerGroup ! Work()
+  routerGroup ! Work("Work 5")
 
-  routerGroup ! Work()
+  routerGroup ! Work("Work 6")
 
-  routerGroup ! Work()
+  routerGroup ! Work("Work 7")
 
-  routerGroup ! Work()
+  routerGroup ! Work("Work 8")
 
   Thread.sleep(100)
 

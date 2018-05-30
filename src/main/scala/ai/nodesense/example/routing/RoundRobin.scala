@@ -11,13 +11,13 @@ object RoundRobin extends App {
 
   val routerPool = system.actorOf(RoundRobinPool(3).props(Props[Worker]), "round-robin-pool")
 
-  routerPool ! Work()
+  routerPool ! Work("Work 1")
 
-  routerPool ! Work()
+  routerPool ! Work("Work 2")
 
-  routerPool ! Work()
+  routerPool ! Work("Work 3")
 
-  routerPool ! Work()
+  routerPool ! Work("Work 4")
 
   Thread.sleep(100)
 
@@ -28,13 +28,13 @@ object RoundRobin extends App {
 
   val routerGroup = system.actorOf(FromConfig.props(), "round-robin-group")
 
-  routerGroup ! Work()
+  routerGroup ! Work("Work 5")
 
-  routerGroup ! Work()
+  routerGroup ! Work("Work 6")
 
-  routerGroup ! Work()
+  routerGroup ! Work("Work 7")
 
-  routerGroup ! Work()
+  routerGroup ! Work("Work 8")
 
   Thread.sleep(100)
 

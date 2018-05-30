@@ -50,7 +50,12 @@ libraryDependencies ++= Seq(
   "mysql" % "mysql-connector-java" % "6.0.6",
 
   // https://mvnrepository.com/artifact/org.iq80.leveldb/leveldb
-  "org.iq80.leveldb" % "leveldb" % "0.10"
+  "org.iq80.leveldb" % "leveldb" % "0.10",
+
+
+  // https://mvnrepository.com/artifact/com.lightbend.akka/akka-stream-alpakka-file
+  "com.lightbend.akka" %% "akka-stream-alpakka-file" % "0.19"
+
 
 
 )

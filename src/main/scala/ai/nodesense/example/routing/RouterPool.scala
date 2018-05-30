@@ -18,7 +18,7 @@ class RouterPool extends Actor {
 
   def receive() = {
     case msg: Work =>
-      println("I'm A Router and I received a Message.....")
+      println("I'm A Router and I received a Work Message.....")
       routees(util.Random.nextInt(routees.size)) forward msg
   }
 }

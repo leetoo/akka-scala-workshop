@@ -10,11 +10,11 @@ object RouterApp extends App {
 
   val router = system.actorOf(Props[RouterPool])
 
-  router ! Work()
+  router ! Work("Work 1")
 
-  router ! Work()
+  router ! Work("Work 2")
 
-  router ! Work()
+  router ! Work("Work 3")
 
   Thread.sleep(100)
 
@@ -30,11 +30,12 @@ object RouterApp extends App {
     "/user/w3",
     "/user/w4",
     "/user/w5")
+
   val routerGroup = system.actorOf(Props(classOf[RouterGroup], workers))
 
-  routerGroup ! Work()
+  routerGroup ! Work("Work 4")
 
-  routerGroup ! Work()
+  routerGroup ! Work("Work 5")
 
   Thread.sleep(100)
 
