@@ -2,7 +2,10 @@ package ai.nodesense.example.persistence
 
 
 import akka.persistence._
-import akka.actor.{ Actor, ActorRef, ActorSystem, Props, ActorLogging }
+import akka.actor.{ Actor, ActorRef,
+                    ActorSystem,
+                    Props,
+                    ActorLogging }
 
 object Counter{
   sealed trait Operation {

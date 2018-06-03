@@ -2,6 +2,7 @@ package ai.nodesense.ecommerce.actors
 
 import akka.actor.{Actor, ActorLogging}
 
+case object PrinterRegistration
 
 class PrinterActor extends Actor with ActorLogging {
   import ai.nodesense.ecommerce.models.Document

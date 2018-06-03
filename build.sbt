@@ -29,9 +29,6 @@ libraryDependencies ++= Seq(
 
   "com.typesafe.akka" %% "akka-remote" % akkaVersion,
 
-  "com.typesafe.akka" %% "akka-persistence" % akkaVersion,
-  "com.typesafe.akka" %% "akka-persistence-query" %  akkaVersion,
-
   "com.typesafe.akka" %% "akka-contrib" % akkaVersion,
 
 
@@ -48,6 +45,11 @@ libraryDependencies ++= Seq(
   "com.typesafe.slick" %% "slick"  % slickVersion,
   "com.typesafe.slick" %% "slick-hikaricp" % slickVersion,
   "mysql" % "mysql-connector-java" % "6.0.6",
+
+
+  "com.typesafe.akka" %% "akka-persistence" % akkaVersion,
+  "com.typesafe.akka" %% "akka-persistence-query" %  akkaVersion,
+
 
   // https://mvnrepository.com/artifact/org.iq80.leveldb/leveldb
   "org.iq80.leveldb" % "leveldb" % "0.10",

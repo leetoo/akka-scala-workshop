@@ -48,14 +48,11 @@ class ProductActor extends Actor with ActorLogging {
         .onComplete {
           case Success(products) => {
             println("Got products ", products);
+            // will not work
+            //sender() ! Products(products.toSeq)
             senderRef ! Products(products.toSeq)
-
           }
-
         }
-
-
-
     }
     case CreateProduct(product) => {
       val senderRef = sender();

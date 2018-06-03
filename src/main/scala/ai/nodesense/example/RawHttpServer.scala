@@ -1,6 +1,5 @@
 package ai.nodesense.example
 
-package ai.nodesense.example
 
 import akka.actor.{ ActorRef, ActorSystem }
 import akka.actor.{Actor, ActorLogging, Props}
@@ -48,32 +47,6 @@ import spray.json.DefaultJsonProtocol
 
 import akka.stream.ActorMaterializer
 
-case class Product(id: Int,
-                   name: String );
-
-final case class Products(products: Seq[Product])
-
-final case object GetProducts;
-final case class GetProduct(id: Int)
-
-final case class CreateProduct(product: Product)
-final case class UpdateProduct(product: Product)
-final case class DeleteProduct(id: Int)
-
-final case class ProductActionPerformed(description: String)
-final case class ActionFailed(statusCode: Int, message: String)
-
-
-trait JsonSupport extends SprayJsonSupport {
-  // import the default encoders for primitive types (Int, String, Lists etc)
-  import DefaultJsonProtocol._
-
-  implicit val productJsonFormat = jsonFormat2(Product)
-  implicit val productsJsonFormat = jsonFormat1(Products)
-
-  implicit  val productActionPerformed = jsonFormat1(ProductActionPerformed)
-
-}
 
 
 
